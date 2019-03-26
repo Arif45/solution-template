@@ -14,9 +14,9 @@ import java.util.Vector;
  */
 public class Solution implements Runnable {
 
-    static String[] str = new String[50];
-    static String[][] column = new String[50][50];
-    static int[][][] table = new int[50][50][50];
+    static String[] str = new String[100];
+    static String[][] column = new String[100][100];
+    static int[][][] table = new int[100][100][100];
     static HashMap<String, Integer> map = new HashMap<String, Integer>();
     static HashMap<String, Integer> map1 = new HashMap<String, Integer>();
     static int[] row = new int[100];
@@ -65,8 +65,8 @@ public class Solution implements Runnable {
 
             Integer n = readLineAsInteger();
             map.clear();
-            int[][] new_table = new int[50][50];
-            int[][] new_table2 = new int[50][50];
+            int[][] new_table = new int[100][100];
+            int[][] new_table2 = new int[100][100];
 
             ///For Input 
             for (int i = 0; i < n; i++) {
@@ -106,7 +106,7 @@ public class Solution implements Runnable {
             String query;
             System.out.println("Test: " + t);
             for (int m = 1; m <= q; m++) {
-                String[] current = new String[50];
+                String[] current = new String[100];
 
                 map1.clear();
 
@@ -134,7 +134,7 @@ public class Solution implements Runnable {
                 }
 
                 String query1 = readLine();
-                //System.out.println("===> query1: " + query1);
+                //System.out.println("query1: " + query1);
                 String[] second_part = query1.split("[' ',]");
                 int sec_part = -1, check = 0;
                 for (String split : second_part) {
@@ -151,7 +151,7 @@ public class Solution implements Runnable {
                             // printLine(split);
 
                             sec_part = map.get(split);
-                            // printLine(fir_tab);
+                            // printLine(sec_part);
                             map1.put(split, sec_part);
                         } else {
                             map1.put(split, sec_part);
@@ -160,7 +160,7 @@ public class Solution implements Runnable {
 
                 }
                 String query2 = readLine();
-                // System.out.println("===> query2: " + query2);
+                // System.out.println(" query2: " + query2);
                 int th_part = -1;
                 check = 0;
                 String[] third_part = query2.split("[' ',]");
@@ -176,10 +176,10 @@ public class Solution implements Runnable {
 
                         if (th_part == -1) {
 
-                            //printLine(sec_tab);
+                            //printLine(th_part);
                             //printLine(split);
                             th_part = map.get(split);
-                            //printLine(sec_tab);
+                            //printLine(th_part);
 
                             map1.put(split, th_part);
                         } else {
@@ -191,7 +191,7 @@ public class Solution implements Runnable {
 
                 String query3 = readLine();
 
-                //System.out.println("===> query3: " + query3); 
+                //System.out.println("query3: " + query3); 
                 String[] list = query3.split("[' ',=]");
                 check = 0;
                 int flag = 0;
