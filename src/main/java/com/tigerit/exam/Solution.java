@@ -78,6 +78,7 @@ public class Solution implements Runnable {
             map.clear();
             int[][] new_table = new int[100][100];
             int[][] new_table2 = new int[100][100];
+        
             ///For Input 
             for (int i = 0; i < n; i++) {
 
@@ -95,6 +96,7 @@ public class Solution implements Runnable {
                 int l = 0;
                 for (String split : splitted1) {
                     // System.out.println(split);
+                    
                     column[i][l] = split;
                     column[i][l]=toLowerCase(column[i][l]);
                     l += 1;
