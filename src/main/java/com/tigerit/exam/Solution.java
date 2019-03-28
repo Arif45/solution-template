@@ -53,6 +53,16 @@ public class Solution implements Runnable {
 
     }
 
+     public static String toLowerCase(String inputString) {
+       String result = "";
+       for (int i = 0; i < inputString.length(); i++) {
+           char currentChar = inputString.charAt(i);
+           char currentCharToLowerCase = Character.toLowerCase(currentChar);
+           result = result + currentCharToLowerCase;
+       }
+       return result;
+   }
+
     @Override
     public void run() {
         // your application entry point
@@ -60,6 +70,7 @@ public class Solution implements Runnable {
         // sample input process
         // String string = readLine();
         // Integer integer = readLineAsInteger();
+        //String c1 = readLine();
         Integer test = readLineAsInteger();
         for (int t = 1; t <= test; t++) {
 
@@ -67,11 +78,11 @@ public class Solution implements Runnable {
             map.clear();
             int[][] new_table = new int[100][100];
             int[][] new_table2 = new int[100][100];
-
             ///For Input 
             for (int i = 0; i < n; i++) {
 
                 str[i] = readLine();
+                str[i] = toLowerCase(str[i]);
                 map.put(str[i], i);
                 String str2 = readLine();
                 String[] splitted3 = str2.split("[' ']");
@@ -80,11 +91,15 @@ public class Solution implements Runnable {
                 String str3 = readLine();
                 String[] splitted1 = str3.split("[' ']");
 
+
                 int l = 0;
                 for (String split : splitted1) {
                     // System.out.println(split);
                     column[i][l] = split;
+                    column[i][l]=toLowerCase(column[i][l]);
                     l += 1;
+                
+               
 
                 }
 
